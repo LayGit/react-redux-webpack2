@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
   render () {
     const 欢迎语 = "Hello World!"
     return (
-      <div>{欢迎语}</div>
+      <div><img src={require('../resources/music.png')} /> {欢迎语}</div>
     )
   }
 }

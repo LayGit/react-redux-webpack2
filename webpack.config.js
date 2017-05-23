@@ -98,7 +98,16 @@ module.exports = {
     }, {
       test: /\.(scss|css)$/,
       use: ExtractTextPlugin.extract({
-          use: ["css-loader", "sass-loader", "postcss-loader"]
+        use: ["css-loader", "sass-loader", {
+          loader: 'postcss-loader',
+          options: {
+            plugins:[
+               require('autoprefixer')({
+                 browsers:['last 5 versions']
+               })
+             ]
+          }
+        }]
       })
     }, {
       test: /\.(png|jpg|gif|md)$/,
