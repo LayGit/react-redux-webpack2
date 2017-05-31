@@ -4,7 +4,8 @@
   "description": "base project for react and webpack2",
   "main": "index.js",
   "scripts": {
-    "dev": "export NODE_EVN=development && node server/index.js",
+    "dev": "export NODE_EVN=development && node build/webpack/devServer.js & npm run nodemon",
+    "nodemon": "nodemon --harmony --watch server server/index.js",
     "compile": "export NODE_ENV=production && webpack --progress --config webpack.config.js"
   },
   "keywords": [
@@ -30,7 +31,9 @@
     "babel-preset-stage-3": "^6.24.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
+    "css-hot-loader": "^1.1.1",
     "css-loader": "^0.28.2",
+    "errorhandler": "^1.5.0",
     "express": "^4.15.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
@@ -42,10 +45,10 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.6.0",
-    "webpack-dev-middleware": "^1.10.2",
-    "webpack-hot-middleware": "^2.18.0"
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "prop-types": "^15.5.10",

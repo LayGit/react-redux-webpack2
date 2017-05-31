@@ -9,13 +9,13 @@ import * as globalActions from '../store/actions/global'
 )
 class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.getNewsList(1, 1)
+
   }
 
   render () {
     const 欢迎语 = "Hello World!"
     return (
-      <div><img src={require('../resources/music.png')} /> {欢迎语}</div>
+      <div className="dashboard"><img src={require('../resources/music.png')} /> {欢迎语}</div>
     )
   }
 }

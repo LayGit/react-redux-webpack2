@@ -15,11 +15,14 @@ const store = configureStore()
 
 const history = createHistory()
 
-ReactDOM.render(
+if (module.hot) {
+  module.hot.accept()
+}
+
+ReactDOM.render((
   <Provider store={store}>
     <Router history={history}>
       {renderRoutes(routes)}
     </Router>
-  </Provider>,
-  document.getElementById('root')
-)
+  </Provider>
+), document.getElementById('app'))
